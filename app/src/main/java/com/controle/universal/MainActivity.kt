@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Inicializa o gerenciador de Bluetooth que criamos
         bluetoothManager = BluetoothConnectionManager(this)
         
         Log.d(TAG, "Inicializando perfil HID...")

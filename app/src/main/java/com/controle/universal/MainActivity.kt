@@ -7,12 +7,16 @@ import android.util.Log
 class MainActivity : AppCompatActivity() {
 
     private val TAG = "BluetoothController"
+    private lateinit var bluetoothManager: BluetoothConnectionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Inicializa o gerenciador de Bluetooth que criamos
+        bluetoothManager = BluetoothConnectionManager(this)
         
-        Log.d(TAG, "Iniciando a lógica do controlador universal...")
-        // A lógica de Bluetooth será adicionada aqui em breve
+        Log.d(TAG, "Inicializando perfil HID...")
+        bluetoothManager.initializeHidProfile()
     }
 }
